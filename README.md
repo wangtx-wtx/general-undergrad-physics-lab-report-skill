@@ -48,6 +48,45 @@ python scripts\run.py --workdir <实验工程目录>
 输出 `<工程>/outputs/<学号_姓名_实验标题>.docx/.pdf`。
 完整流程与排版规范见 `lab-report/INSTALL.md` 与 `lab-report/SKILL.md`。
 
+## 安装与使用（给使用者）/ Getting Started for Users
+
+> 拿到本仓库后，按下面 4 步即可把这个技能装进你自己的 agent 环境，并用它生成实验报告。
+
+**第 1 步 — 获取代码 / Get the code**
+
+```bash
+git clone https://github.com/wangtx-wtx/general-undergrad-physics-lab-report-skill
+```
+或在仓库主页点 **Code → Download ZIP** 下载解压。
+
+**第 2 步 — 安装技能 / Install the skill**
+
+把 `lab-report` 目录放进你 agent 的 **skills 目录**（不同 agent 位置不同，详见 `lab-report/INSTALL.md`）。也可运行自带安装脚本自动铺设：
+
+- Windows：在 `lab-report` 目录执行 `.\install.ps1`
+- macOS / Linux：执行 `bash install.sh`
+
+脚本会自动把技能铺到当前目录的 `skills/lab-report`，并安装 Python 依赖、做语法自检。
+
+**第 3 步 — 装 Python 依赖 / Install Python dependencies**
+
+```bash
+pip install -r requirements.txt
+```
+依赖：`python-docx`、`matplotlib`、`Pillow`、`pywin32`。
+
+**第 4 步 — 准备一个实验工程 / Prepare an experiment workspace**
+
+按 `lab-report/SKILL.md` 第 ①~④ 步，为你的实验准备一个工程目录：`config.json`（学生信息/数据/常数）、`inputs/`（Word 模板与数据照片）、以及一个实现 `analyze/plot/build` 三个函数的实验适配模块 `experiments/xxx.py`（可参考本仓库示例写法）。然后：
+
+```bash
+python scripts\run.py --workdir <你的实验工程目录>
+```
+
+输出 `<工程>/outputs/<学号_姓名_实验标题>.docx/.pdf`。
+
+> **注意**：PDF 导出与 `.doc` 模板解析依赖本机可把 docx 转 pdf 的工具（Microsoft Word / LibreOffice）。
+
 ## 使用提示 / Notes
 
 - **数据识别必须人工核对**：手写数值看不清晰请先确认，避免抄写错误 / Verify handwritten data with the user before computing.
