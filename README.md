@@ -87,6 +87,10 @@ python scripts\run.py --workdir <你的实验工程目录>
 
 > **注意**：PDF 导出与 `.doc` 模板解析依赖本机可把 docx 转 pdf 的工具（Microsoft Word / LibreOffice）。
 
+## 开箱即用 / Out of the Box
+
+> 适配模块（`experiments/xxx.py`）是为让 agent 自动生成而设计的。把你的实验数据与 Word 模板交给装了本技能的 code 型 agent，agent 会按 `SKILL.md` 骨架自动编写该实验的计算/绘图/排版模块，**无需人工手写代码**；仅对较特殊或冷门的实验，建议人工确认公式与拟合方式。
+
 ## 使用提示 / Notes
 
 - **数据识别必须人工核对**：手写数值看不清晰请先确认，避免抄写错误 / Verify handwritten data with the user before computing.
