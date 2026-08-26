@@ -1,0 +1,6 @@
+# lab-report 技能运行依赖
+# 安装:  pip install -r requirements.txt
+python-docx
+matplotlib
+Pillow
+pywin32

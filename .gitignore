@@ -1,0 +1,30 @@
+# 忽略文件（不提交到仓库）
+# Python 缓存与构建产物
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# 实验数据与个人文件（切勿上传）
+inputs/
+outputs/
+charts/
+config*.json
+*.doc
+*.docx
+*.pdf
+*.jpg
+*.jpeg
+*.png
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# 本地
+.env
+local.settings.json
